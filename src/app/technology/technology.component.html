@@ -1,12 +1,6 @@
-<div class="tech">
-<select class="custom-select">
+<div class="tech" >
+<select class="custom-select" (change)="getTopics($event)" id="technology-dropdown">
   <option selected>Technology</option>
-  <option value="1">Angular</option>
-  <option value="2">C</option>
-  <option value="3">C#</option>
-  <option value="4">Java</option>
-  <option value="5">HTML,CSS & Bootstrap</option>
-  <option value="6">.NET Core</option>
-
+  <option *ngFor="let technology of technologies" >{{technology.Name}}</option>
 </select>
 </div>

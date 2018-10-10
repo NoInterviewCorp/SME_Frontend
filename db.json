@@ -1,0 +1,23 @@
+{
+    "Technology":[
+        {
+            "Name" : "Angular",
+            "Topics":["components and templates","Services","Routing","Observables","Testing"]
+        },{
+            "Name" : "C",
+            "Topics":["introduction","loops","decision making","arrays,strings & structures","pointers","files"]
+        },{
+            "Name" : "C#",
+            "Topics":["introduction","loops","decision making","arrays,strings & structures","pointers","files"]
+        },{
+            "Name" : "Java",
+            "Topics":["introduction","arrays & strings","basic principles","interface","exception handling","collections"]
+        },{
+            "Name" : "HTML,CSS & Bootstrap",
+            "Topics":["introduction","loops","decision making","arrays,strings & structures","pointers","files"]
+        },{
+            "Name" : ".NET Core",
+            "Topics":["introduction","loops","decision making","arrays,strings & structures","pointers","files"]
+        }
+    ]
+}
