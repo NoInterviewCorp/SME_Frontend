@@ -1,13 +1,15 @@
 <div class="tech" >
-  <form [formGroup]="techForm">
+  <form class="formclass form-group" [formGroup]="techForm">
     <select  class="select" formControlName="techControl" (change)="getTopics($event)" id="technology-dropdown">
       <option [ngValue]="technology" *ngFor="let technology of technologies">{{technology.Name}}</option>
-     <!-- <option [ngValue]="topic" *ngFor="let topics of topic" >{{technology.topic}}</option>-->
-    </select><br><br><br>
-    <select  class="select1" *ngIf="hasSelectedTechnology" id="technology-dropdown">
-        <option [ngValue]="topic" *ngFor="let topic of topics">{{topic}}</option>
-       <!-- <option [ngValue]="topic" *ngFor="let topics of topic" >{{technology.topic}}</option>-->
-      </select>
     
+    </select><br><br><br>
+    <select  class="select1" *ngIf="hasSelectedTechnology" (change)="getSubmit()" id="topic-dropdown">
+        <option [ngValue]="topic" *ngFor="let topic of topics">{{topic}}</option>
+        
+       <!-- <option [ngValue]="topic" *ngFor="let topics of topic" >{{technology.topic}}</option>-->
+      </select><br><br><br>
+      <button class="btn btn-success"type="submit" form="form1" value="Submit" *ngIf="hasSelectedTopic" routerLink="questions" routerLinkActive="active">Submit</button>
   </form>
+  
 </div>

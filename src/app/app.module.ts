@@ -8,13 +8,15 @@ import { HeadingComponent } from './heading/heading.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { QuestionsComponent } from './questions/questions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TechnologyComponent,
     HeadingComponent,
-    HomeComponent
+    HomeComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,

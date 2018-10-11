@@ -16,6 +16,7 @@ export class TechnologyComponent implements OnInit {
   technologies: Technology[];
   topics: string[];
   hasSelectedTechnology:boolean=false;
+  hasSelectedTopic:boolean=false;
 
   constructor(private svc: SMEService, private fb: FormBuilder) {
     this.getTechnologies();
@@ -43,5 +44,10 @@ export class TechnologyComponent implements OnInit {
       //this.topics[index] = topic;
       console.log(topic);
     })
+    
   }
+  getSubmit(){
+    this.hasSelectedTopic=true;
+  }
+  
 }

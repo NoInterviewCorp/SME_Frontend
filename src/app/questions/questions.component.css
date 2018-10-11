@@ -1,0 +1,25 @@
+.head{
+    /* width: 100%; */
+    margin-top: 0%;
+    padding-top: 0%;
+    background-color: silver;
+}
+.text{
+    color: black;
+    font-size: 50px;  
+}
+
+label{
+    font-size: 25px;
+}
+
+.formclass{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+input[type=text]{
+    width:90%;
+    margin-left: 10px;
+}
+
