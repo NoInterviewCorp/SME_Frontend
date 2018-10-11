@@ -1,8 +1,11 @@
 .head{
-    widows: 100%;
+    width: 100%;
     margin: auto;
-    background-color: coral
+    background-color: silver;
 }
-h1{
-    color: aliceblue
+.text{
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 50px;  
 }
