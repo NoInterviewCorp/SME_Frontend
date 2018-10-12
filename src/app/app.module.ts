@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { Question1Component } from './question1/question1.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     HeadingComponent,
     HomeComponent,
     QuestionsComponent,
+    Question1Component
   ],
   imports: [
     BrowserModule,

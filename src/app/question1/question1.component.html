@@ -1,0 +1,59 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Question {{id}}
+      </mat-panel-title><br><br>
+      <mat-panel-description>
+        
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    
+    <div class="example-container">
+      <mat-form-field>
+            <textarea matInput placeholder="Question goes here!" [formControl]="question"  required></textarea>
+            <mat-error *ngIf="question.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      </div><br><br>
+
+      <mat-checkbox></mat-checkbox> 
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="option 1"  [formControl]="option1" required>
+          <mat-error *ngIf="option1.invalid">{{getErrorMessage1()}}</mat-error>
+        </mat-form-field><br><br>
+        
+
+        <mat-checkbox></mat-checkbox> 
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="option 2"  [formControl]="option2" required>
+          <mat-error *ngIf="option2.invalid">{{getErrorMessage2()}}</mat-error>
+        </mat-form-field><br><br>
+
+        <mat-checkbox></mat-checkbox> 
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="option 3"  [formControl]="option3" required>
+          <mat-error *ngIf="option3.invalid">{{getErrorMessage3()}}</mat-error>
+        </mat-form-field><br><br>
+
+        <mat-checkbox></mat-checkbox> 
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="option 4"  [formControl]="option4" required>
+            <mat-error *ngIf="option4.invalid">{{getErrorMessage4()}}</mat-error>
+          </mat-form-field><br><br><br>
+          <mat-form-field class="example-full-width">
+          <input matInput placeholder="Give a Resource Link"  [formControl]="resourcelink" required>
+          <mat-error *ngIf="resourcelink.invalid">{{getErrorMessage5()}}</mat-error>
+        </mat-form-field><br><br><br>
+
+          <mat-form-field>
+              <mat-select [(value)]="selected" placeholder="Give Bloom's Taxanomy Level" [formControl]="bloomlevel" required>
+                  <mat-error *ngIf="option4.invalid">{{getErrorMessage6()}}</mat-error>
+                <mat-option value="1">Knowledge</mat-option>
+                <mat-option value="2">Comprehension</mat-option>
+                <mat-option value="3">Application</mat-option>
+                <mat-option value="4">Analysis</mat-option>
+                <mat-option value="5">Synthesis</mat-option>
+                <mat-option value="6">Evaluation</mat-option>
+              </mat-select>
+            </mat-form-field>
+  
+  </mat-expansion-panel>

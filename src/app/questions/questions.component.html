@@ -5,64 +5,12 @@
   </mat-toolbar>
 
   <mat-accordion>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Question 1
-          </mat-panel-title>
-          <mat-panel-description>
-            
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-
-        <div class="example-container">
-          <mat-form-field>
-                <textarea matInput placeholder="Question goes here!" [formControl]="question"  required></textarea>
-                <mat-error *ngIf="question.invalid">{{getErrorMessage()}}</mat-error>
-          </mat-form-field>
-          </div>
-
-          <mat-checkbox></mat-checkbox> 
-          <mat-form-field class="example-full-width">
-              <input matInput placeholder="option 1"  [formControl]="option1" required>
-              <mat-error *ngIf="option1.invalid">{{getErrorMessage1()}}</mat-error>
-            </mat-form-field>
-            
-
-            <mat-checkbox></mat-checkbox> 
-          <mat-form-field class="example-full-width">
-              <input matInput placeholder="option 2"  [formControl]="option2" required>
-              <mat-error *ngIf="option2.invalid">{{getErrorMessage2()}}</mat-error>
-            </mat-form-field>
-
-            <mat-checkbox></mat-checkbox> 
-          <mat-form-field class="example-full-width">
-              <input matInput placeholder="option 3"  [formControl]="option3" required>
-              <mat-error *ngIf="option3.invalid">{{getErrorMessage3()}}</mat-error>
-            </mat-form-field>
-
-            <mat-checkbox></mat-checkbox> 
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="option 4"  [formControl]="option4" required>
-                <mat-error *ngIf="option4.invalid">{{getErrorMessage4()}}</mat-error>
-              </mat-form-field>
-
-      
-      </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Self aware panel
-          </mat-panel-title>
-          <mat-panel-description>
-            Currently I am {{panelOpenState ? 'open' : 'closed'}}
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
+    <app-question1 *ngFor =  "let index of questions; " [id] = "index"></app-question1><br><br>
     </mat-accordion>
     
+    <div class="button-row">
+        <button mat-flat-button color="primary" >Submit</button>
+        </div>
 
 
  
