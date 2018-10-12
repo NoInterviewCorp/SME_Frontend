@@ -1,21 +1,8 @@
-.navb{
-    background-color: antiquewhite
-}
-
-.accordion{
-    padding-top: 70px;
-}
-label{
-    font-size: 20px;
-}
-
-.formclass{
-    padding-top: 10px;
-    padding-left: 10px;
-}
-
-input[type=text]{
-    width:90%;
-    margin-left: 10px;
-}
- 
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }

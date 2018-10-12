@@ -1,15 +1,25 @@
-<div class="tech" >
-  <form class="formclass form-group" [formGroup]="techForm">
-    <select  class="select" formControlName="techControl" (change)="getTopics($event)" id="technology-dropdown">
-      <option [ngValue]="technology" *ngFor="let technology of technologies">{{technology.Name}}</option>
-    
-    </select><br><br><br>
-    <select  class="select1" *ngIf="hasSelectedTechnology" (change)="getSubmit()" id="topic-dropdown">
-        <option [ngValue]="topic" *ngFor="let topic of topics">{{topic}}</option>
+<form>
+    <mat-form-field>
+      <mat-select placeholder="Technology" [(ngModel)]="selectedValue" (selectionChange) = "getTopics()"  name="technology">
+        <mat-option *ngFor="let technology of technologies" [value]="technology">
+          {{technology.Name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field><br><br>
+
+    <mat-form-field *ngIf="hasSelectedTechnology">
+    <mat-select placeholder="Topics"  [(ngModel)]="selectedTopic"  (selectionChange) = "getSubmit()" name="topic">
+        <mat-option *ngFor="let topic of topics" [value]="topic">
+          {{topic}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field><br><br>
+
+    <div class="button-row">
         
-       <!-- <option [ngValue]="topic" *ngFor="let topics of topic" >{{technology.topic}}</option>-->
-      </select><br><br><br>
-      <button class="btn btn-success"type="submit" form="form1" value="Submit" *ngIf="hasSelectedTopic" routerLink="questions" routerLinkActive="active">Submit</button>
-  </form>
+        <button *ngIf="hasSelectedTopic" mat-raised-button color="warn" (click)="postQuestions()">Submit</button>
+    </div>
+  </form><br><br><br>
+
+  <app-questions *ngIf="buttonClicked"></app-questions>
   
-</div>
