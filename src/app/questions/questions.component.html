@@ -5,12 +5,20 @@
   </mat-toolbar>
 
   <mat-accordion>
-    <app-question1 *ngFor =  "let index of questions; " [id] = "index"></app-question1><br><br>
-    </mat-accordion>
+      
+    <app-question1  *ngFor =  "let index of questions; " [id] = "index" (noError) = "handleEventEmitter($event)"></app-question1><br><br>
     
-    <div class="button-row">
-        <button mat-flat-button color="primary" >Submit</button>
+    
+    </mat-accordion>
+    <!--<div class="button-row">
+        <button mat-flat-button color="primary" *ngIf="(noerror)">Submit</button>
+        </div>-->
+    
+        <div class="button-row">
+            <button mat-flat-button color="primary" (click)="onClick()">submit</button>
+            
         </div>
 
-
+        <p *ngIf="haserror">you have to give all the required fields</p>
+        <p *ngIf="hasnoerrorr">your questions have been posted successfully</p>
  

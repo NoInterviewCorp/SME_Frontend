@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 
 @Component({
@@ -8,7 +8,8 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class Question1Component implements OnInit {
   @Input() id : number;
-  panelOpenState = false;
+  @Output() noError = new EventEmitter();
+  //panelOpenState = false;
   question = new FormControl('', [Validators.required]);
   option1 = new FormControl('', [Validators.required]);
   option2 = new FormControl('', [Validators.required]);
@@ -16,37 +17,47 @@ export class Question1Component implements OnInit {
   option4 = new FormControl('', [Validators.required]);
   resourcelink = new FormControl('', [Validators.required]);
   bloomlevel = new FormControl('', [Validators.required]);
-
-  constructor() { }
-
+  
+  constructor() { 
+  }
+  
   ngOnInit() {
+    this.noError.emit(true);
   }
 
   getErrorMessage() {
+    console.log("called error message");
+    this.noError.emit(false);
     return this.question.hasError('required') ? 'You must enter a value' : '';     
   }
 
   getErrorMessage1() {
+    this.noError.emit(false);
     return this.option1.hasError('required') ? 'You must enter a value' : '';     
   }
 
   getErrorMessage2() {
+    this.noError.emit(false);
     return this.option2.hasError('required') ? 'You must enter a value' : '';     
   }
 
   getErrorMessage3() {
+    this.noError.emit(false);
     return this.option3.hasError('required') ? 'You must enter a value' : '';     
   }
 
   getErrorMessage4() {
+    this.noError.emit(false);
     return this.option4.hasError('required') ? 'You must enter a value' : '';     
   }
 
   getErrorMessage5() {
+    this.noError.emit(false);
     return this.resourcelink.hasError('required') ? 'You must enter a value' : '';     
   }
 
   getErrorMessage6() {
+    this.noError.emit(false);
     return this.bloomlevel.hasError('required') ? 'You must enter a value' : '';     
   }
 
