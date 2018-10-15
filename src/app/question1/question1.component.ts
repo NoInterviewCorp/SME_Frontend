@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-question1',
@@ -7,72 +7,65 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./question1.component.css']
 })
 export class Question1Component implements OnInit {
-  @Input() id : number;
+  @Input() id: number;
   @Output() noError = new EventEmitter();
   //panelOpenState = false;
   question = new FormControl('', [Validators.required]);
-  option1 = new FormControl('', [Validators.required]);
-  option2 = new FormControl('', [Validators.required]);
-  option3 = new FormControl('', [Validators.required]);
-  option4 = new FormControl('', [Validators.required]);
+  options: FormControl[] = [
+    new FormControl('',[Validators.required]),
+    new FormControl('',[Validators.required]),
+    new FormControl('',[Validators.required]),
+    new FormControl('',[Validators.required])
+  ];
+  isValidArray:boolean[] = new Array(7).fill(false);
+  
   resourcelink = new FormControl('', [Validators.required]);
   bloomlevel = new FormControl('', [Validators.required]);
-  
-  constructor() { 
+
+  constructor() {
   }
-  
+
   ngOnInit() {
-   // this.noError.emit(true);
+    // this.noError.emit(true);
   }
 
   getErrorMessage() {
-    console.log("called error message");
     this.noError.emit(false);
-    return this.question.hasError('required') ? 'You must enter a value' : '';     
+    this.isValidArray[0] = false;
+    return this.question.hasError('required') ? 'You must enter a value' : '';
   }
 
-  getValidMessage(){
-    this.noError.emit(true);
+  getValidMessage(index:number) {
+    this.isValidArray[index] = true;
+    let areAllValid = true;
+    // this.isValidArray.forEach(isValidItem => areAllValid = (areAllValid && isValidItem));
+    for(let i =0;i < this.isValidArray.length;i++){
+      areAllValid = (areAllValid && this.isValidArray[i]);
+    }
+    this.noError.emit(areAllValid);
   }
 
-  getErrorMessage1() {
+  getErrorMessage1(index:number) {
     this.noError.emit(false);
-    return this.option1.hasError('required') ? 'You must enter a value' : '';     
+    this.isValidArray[index+1] = false;
+    return this.options[index].hasError('required') ? 'You must enter a value' : '';
   }
 
-
- getErrorMessage2() {
-    this.noError.emit(false);
-    return this.option2.hasError('required') ? 'You must enter a value' : '';     
-  }
 
  
-
-  getErrorMessage3() {
-    this.noError.emit(false);
-    return this.option3.hasError('required') ? 'You must enter a value' : '';     
-  }
-
- 
-
-  getErrorMessage4() {
-    this.noError.emit(false);
-    return this.option4.hasError('required') ? 'You must enter a value' : '';     
-  }
-
-  
-
   getErrorMessage5() {
     this.noError.emit(false);
-    return this.resourcelink.hasError('required') ? 'You must enter a value' : '';     
+    this.isValidArray[5] = false;
+    return this.resourcelink.hasError('required') ? 'You must enter a value' : '';
   }
 
- 
+
 
   getErrorMessage6() {
     this.noError.emit(false);
-    return this.bloomlevel.hasError('required') ? 'You must enter a value' : '';     
+    this.isValidArray[6] = false;
+    return this.bloomlevel.hasError('required') ? 'You must enter a value' : '';
   }
 
-  
+
 }
