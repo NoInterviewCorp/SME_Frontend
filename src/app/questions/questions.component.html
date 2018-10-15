@@ -10,14 +10,21 @@
 
 
 </mat-accordion>
-<!--<div class="button-row">
-        <button mat-flat-button color="primary" *ngIf="(noerror)">Submit</button>
-        </div>-->
+
 
 <div class="button-row">
-    <button mat-flat-button color="primary" (click)="onClick()">submit</button>
-
+    <button mat-flat-button color="primary" id="add" (click)="addQuestion()">Add</button><br><br>
 </div>
 
+<app-question1 *ngIf="hasclickedAdd" (noError)="handleEventEmitter($event)"></app-question1>
+
+
+
+<div class="button-row">
+    <button mat-flat-button color="primary" (click)="onClick()" id="submit">submit</button>
+
+</div><br><br>
+
 <p *ngIf="haserror">you have to give all the required fields</p>
-<p *ngIf="hasnoerror">your questions have been posted successfully</p>
+<p *ngIf="hasnoerror" > your questions have been posted successfully</p>
+

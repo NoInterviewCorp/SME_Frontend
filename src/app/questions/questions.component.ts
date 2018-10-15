@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
+import { SMEService } from '../../services/sme.service';
+import { Questions } from '../question.model';
 
 @Component({
   selector: 'app-questions',
@@ -8,13 +10,15 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class QuestionsComponent implements OnInit {
   
-  questions = [1];
+  questions:Array<number>=[1,2];
+  lastNumber = this.questions[this.questions.length -1];
   noerror:boolean;
   haserror:boolean=false;
   hasnoerror:boolean=false;
+  hasClickedAdd:boolean=false;
  
   
-  constructor() { }
+  constructor(private svc: SMEService) { }
 
   ngOnInit() {
   }
@@ -25,6 +29,7 @@ export class QuestionsComponent implements OnInit {
       this.haserror=false;
       this.hasnoerror=true;
       console.log("no error");
+      this.postQuestions();
     }
     else{
       this.haserror=true;
@@ -35,5 +40,15 @@ export class QuestionsComponent implements OnInit {
   handleEventEmitter(hasNoError:boolean){
     this.noerror = hasNoError
     // console.log(hasNoError);
+  }
+
+  postQuestions(){
+    this.svc.submitQuestions();
+  }
+
+  addQuestion(){
+    //console.log("clicked");
+    this.hasClickedAdd=true;
+    this.questions.push(++this.lastNumber);
   }
 }

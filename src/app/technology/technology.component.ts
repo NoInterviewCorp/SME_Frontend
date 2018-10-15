@@ -46,7 +46,7 @@ export class TechnologyComponent implements OnInit {
     this.hasSelectedTopic=true;
   }
   
-  postQuestions(){
+  postQuestionsForm(){
     this.buttonClicked=true;
   }
 }

@@ -13,4 +13,8 @@ export class SMEService {
     return this.http.get('http://localhost:3000/Technology');
   }
 
+  submitQuestions(){
+    console.log('posted questions');
+  }
+
 }
