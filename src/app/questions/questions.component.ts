@@ -11,7 +11,7 @@ export class QuestionsComponent implements OnInit {
   questions = [1];
   noerror:boolean;
   haserror:boolean=false;
-  hasnoerror:boolean=true;
+  hasnoerror:boolean=false;
  
   
   constructor() { }
@@ -24,6 +24,7 @@ export class QuestionsComponent implements OnInit {
     if(this.noerror){
       this.haserror=false;
       this.hasnoerror=true;
+      console.log("no error");
     }
     else{
       this.haserror=true;

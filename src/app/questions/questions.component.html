@@ -1,24 +1,23 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <span>Post Your Questions</span>
-  </mat-toolbar-row>
-  </mat-toolbar>
+        <span>Post Your Questions</span>
+    </mat-toolbar-row>
+</mat-toolbar>
 
-  <mat-accordion>
-      
-    <app-question1  *ngFor =  "let index of questions; " [id] = "index" (noError) = "handleEventEmitter($event)"></app-question1><br><br>
-    
-    
-    </mat-accordion>
-    <!--<div class="button-row">
+<mat-accordion>
+
+    <app-question1 *ngFor="let index of questions; " [id]="index" (noError)="handleEventEmitter($event)"></app-question1><br><br>
+
+
+</mat-accordion>
+<!--<div class="button-row">
         <button mat-flat-button color="primary" *ngIf="(noerror)">Submit</button>
         </div>-->
-    
-        <div class="button-row">
-            <button mat-flat-button color="primary" (click)="onClick()">submit</button>
-            
-        </div>
 
-        <p *ngIf="haserror">you have to give all the required fields</p>
-        <p *ngIf="hasnoerrorr">your questions have been posted successfully</p>
- 
+<div class="button-row">
+    <button mat-flat-button color="primary" (click)="onClick()">submit</button>
+
+</div>
+
+<p *ngIf="haserror">you have to give all the required fields</p>
+<p *ngIf="hasnoerror">your questions have been posted successfully</p>

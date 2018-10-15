@@ -2,22 +2,22 @@
     "Technology":[
         {
             "Name" : "Angular",
-            "Topics":["components and templates","Services","Routing","Observables","Testing"]
+            "Topics":["Components and Templates","Services","Routing","Observables","Testing"]
         },{
             "Name" : "C",
-            "Topics":["introduction","loops","decision making","arrays,strings & structures","pointers","files"]
+            "Topics":["Introduction","Loops","Decision Making","Arrays,Strings & Structures","Pointers","Files"]
         },{
             "Name" : "C#",
-            "Topics":["introduction","loops","decision making","arrays,strings & structures","pointers","files"]
+            "Topics":["Introduction","Loops","Decision Making","Arrays,Strings & Structures","Pointers","Files"]
         },{
             "Name" : "Java",
-            "Topics":["introduction","arrays & strings","basic principles","interface","exception handling","collections"]
+            "Topics":["Introduction","Arrays & Strings","Basic Principles","Interface","Exception Handling","Collections"]
         },{
             "Name" : "HTML,CSS & Bootstrap",
-            "Topics":["introduction","loops","decision making","arrays,strings & structures","pointers","files"]
+            "Topics":["Introduction","Loops","Decision Making","Arrays,Strings & Structures","Pointers","Files"]
         },{
             "Name" : ".NET Core",
-            "Topics":["introduction","loops","decision making","arrays,strings & structures","pointers","files"]
+            "Topics":["Introduction","Loops","Decision Making","Arrays,Strings & Structures","Pointers","Files"]
         }
     ]
 }

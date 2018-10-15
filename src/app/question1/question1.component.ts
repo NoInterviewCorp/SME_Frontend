@@ -22,7 +22,7 @@ export class Question1Component implements OnInit {
   }
   
   ngOnInit() {
-    this.noError.emit(true);
+   // this.noError.emit(true);
   }
 
   getErrorMessage() {
@@ -31,34 +31,48 @@ export class Question1Component implements OnInit {
     return this.question.hasError('required') ? 'You must enter a value' : '';     
   }
 
+  getValidMessage(){
+    this.noError.emit(true);
+  }
+
   getErrorMessage1() {
     this.noError.emit(false);
     return this.option1.hasError('required') ? 'You must enter a value' : '';     
   }
 
-  getErrorMessage2() {
+
+ getErrorMessage2() {
     this.noError.emit(false);
     return this.option2.hasError('required') ? 'You must enter a value' : '';     
   }
+
+ 
 
   getErrorMessage3() {
     this.noError.emit(false);
     return this.option3.hasError('required') ? 'You must enter a value' : '';     
   }
 
+ 
+
   getErrorMessage4() {
     this.noError.emit(false);
     return this.option4.hasError('required') ? 'You must enter a value' : '';     
   }
+
+  
 
   getErrorMessage5() {
     this.noError.emit(false);
     return this.resourcelink.hasError('required') ? 'You must enter a value' : '';     
   }
 
+ 
+
   getErrorMessage6() {
     this.noError.emit(false);
     return this.bloomlevel.hasError('required') ? 'You must enter a value' : '';     
   }
 
+  
 }
