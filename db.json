@@ -2,22 +2,28 @@
     "Technology":[
         {
             "Name" : "Angular",
-            "Topics":["Components and Templates","Services","Routing","Observables","Testing"]
-        },{
+            "Topics":[{ "Name":"Components and Templates" },{ "Name":"Services"}, { "Name":"Routing" }, {  "Name":"Observables"},{ "Name":"Testing"}]
+            
+        },
+        {
             "Name" : "C",
-            "Topics":["Introduction","Loops","Decision Making","Arrays,Strings & Structures","Pointers","Files"]
-        },{
+            "Topics":[{"Name":"Introduction"},{"Name":"Loops"},{"Name":"Decision Making"},{"Name":"Arrays,Strings & Structures"},{"Name":"Pointers"},{"Name":"Files"}]
+        },
+        {
             "Name" : "C#",
-            "Topics":["Introduction","Loops","Decision Making","Arrays,Strings & Structures","Pointers","Files"]
-        },{
+            "Topics":[{"Name":"Introduction"},{"Name":"Loops"},{"Name":"Decision Making"},{"Name":"Arrays,Strings & Structures"},{"Name":"Pointers"},{"Name":"Files"}]
+        },
+        {
             "Name" : "Java",
-            "Topics":["Introduction","Arrays & Strings","Basic Principles","Interface","Exception Handling","Collections"]
-        },{
+            "Topics":[{"Name":"Introduction"},{"Name":"Arrays & Strings"},{"Name":"Basic Principles"},{"Name":"Interface"},{"Name":"Exception Handling"},{"Name":"Collections"}]
+        },
+        {
             "Name" : "HTML,CSS & Bootstrap",
-            "Topics":["Introduction","Loops","Decision Making","Arrays,Strings & Structures","Pointers","Files"]
-        },{
+            "Topics":[{"Name":"Introduction"},{"Name":"Loops"},{"Name":"Decision Making"},{"Name":"Arrays,Strings & Structures"},{"Name":"Pointers"},{"Name":"Files"}]
+        },
+        {
             "Name" : ".NET Core",
-            "Topics":["Introduction","Loops","Decision Making","Arrays,Strings & Structures","Pointers","Files"]
+            "Topics":[{"Name":"Introduction"},{"Name":"Loops"},{"Name":"Decision Making"},{"Name":"Arrays,Strings & Structures"},{"Name":"Pointers"},{"Name":"Files"}]
         }
     ]
 }

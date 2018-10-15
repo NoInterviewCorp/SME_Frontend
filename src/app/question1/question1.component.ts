@@ -17,10 +17,9 @@ export class Question1Component implements OnInit {
     new FormControl('',[Validators.required]),
     new FormControl('',[Validators.required])
   ];
-  isValidArray:boolean[] = new Array(7).fill(false);
-  
   resourcelink = new FormControl('', [Validators.required]);
   bloomlevel = new FormControl('', [Validators.required]);
+  isValidArray:boolean[] = new Array(7).fill(false);
 
   constructor() {
   }

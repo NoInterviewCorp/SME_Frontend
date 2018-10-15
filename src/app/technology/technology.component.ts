@@ -3,6 +3,7 @@ import { Technology } from './technology.model';
 import { SMEService } from '../../services/sme.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { Topics } from '../topic.model';
 
 
 
@@ -15,7 +16,7 @@ export class TechnologyComponent implements OnInit {
   selectedValue:Technology;
   selectedTopic:string;
   technologies: Technology[];
-  topics: string[];
+  topics: Topics[];
   hasSelectedTechnology:boolean=false;
   hasSelectedTopic:boolean=false;
   buttonClicked:boolean=false;

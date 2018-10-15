@@ -10,7 +10,7 @@
     <mat-form-field *ngIf="hasSelectedTechnology">
     <mat-select placeholder="Topics"  [(ngModel)]="selectedTopic"  (selectionChange) = "getSubmit()" name="topic">
         <mat-option *ngFor="let topic of topics" [value]="topic">
-          {{topic}}
+          {{topic.Name}}
         </mat-option>
       </mat-select>
     </mat-form-field><br><br>
