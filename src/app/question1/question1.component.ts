@@ -9,6 +9,8 @@ import { FormControl, Validators } from '@angular/forms';
 export class Question1Component implements OnInit {
   @Input() id: number;
   @Output() noError = new EventEmitter();
+ // @Output() noError:EventEmitter<any>=new EventEmitter<any>();
+  //eventTwo: EventEmitter<any> = new EventEmitter<any>();
   //panelOpenState = false;
   question = new FormControl('', [Validators.required]);
   options: FormControl[] = [
@@ -29,7 +31,7 @@ export class Question1Component implements OnInit {
   }
 
   getErrorMessage() {
-    this.noError.emit(false);
+    this.noError.emit({MemberId:this.id,HasError:false});
     this.isValidArray[0] = false;
     return this.question.hasError('required') ? 'You must enter a value' : '';
   }
@@ -41,11 +43,11 @@ export class Question1Component implements OnInit {
     for(let i =0;i < this.isValidArray.length;i++){
       areAllValid = (areAllValid && this.isValidArray[i]);
     }
-    this.noError.emit(areAllValid);
+    this.noError.emit({MemberId:this.id,HasError:areAllValid});
   }
 
   getErrorMessage1(index:number) {
-    this.noError.emit(false);
+    this.noError.emit({MemberId:this.id,HasError:false});
     this.isValidArray[index+1] = false;
     return this.options[index].hasError('required') ? 'You must enter a value' : '';
   }
@@ -53,7 +55,7 @@ export class Question1Component implements OnInit {
 
  
   getErrorMessage5() {
-    this.noError.emit(false);
+    this.noError.emit({MemberId:this.id,HasError:false});
     this.isValidArray[5] = false;
     return this.resourcelink.hasError('required') ? 'You must enter a value' : '';
   }
@@ -61,7 +63,7 @@ export class Question1Component implements OnInit {
 
 
   getErrorMessage6() {
-    this.noError.emit(false);
+    this.noError.emit({MemberId:this.id,HasError:false});
     this.isValidArray[6] = false;
     return this.bloomlevel.hasError('required') ? 'You must enter a value' : '';
   }

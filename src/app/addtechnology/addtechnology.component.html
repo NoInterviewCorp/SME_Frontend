@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>Add Technology</span>
+    </mat-toolbar-row>
+</mat-toolbar><br><br>
+
+<form class="example-form">
+    <mat-form-field class="example-full-width" (keyup.enter)="enter()">
+      <input matInput placeholder="Technology Name">
+    </mat-form-field><br><br>
+    <div *ngIf="hasPressedEnter" >
+    <mat-form-field class="example-full-width" *ngFor="let index of topics;let id=index">
+        <input  matInput placeholder="Topic {{topics[id]}}">
+      </mat-form-field>
+    </div>
+    <div class="button-row">
+        <button mat-flat-button color="primary" id="add" *ngIf="hasPressedEnter" (click)="addTopic()">Add</button><br><br>
+    </div>
+</form>    
+
+

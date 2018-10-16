@@ -20,6 +20,7 @@ export class TechnologyComponent implements OnInit {
   hasSelectedTechnology:boolean=false;
   hasSelectedTopic:boolean=false;
   buttonClicked:boolean=false;
+  
 
   constructor(private svc: SMEService, private fb: FormBuilder) {
     this.getTechnologies();
@@ -32,9 +33,7 @@ export class TechnologyComponent implements OnInit {
     this.svc.showTechnologies().subscribe((res: any) => {
       this.technologies = res;
       console.log(this.technologies);
-      //this.techForm = this.fb.group({
-        //techControl: [this.technologies[0]]
-      //});
+      
     });
 
   }
@@ -49,4 +48,6 @@ export class TechnologyComponent implements OnInit {
   postQuestionsForm(){
     this.buttonClicked=true;
   }
+
+ 
 }
