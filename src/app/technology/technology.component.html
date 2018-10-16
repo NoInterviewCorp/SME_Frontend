@@ -12,29 +12,22 @@
         <mat-option *ngFor="let topic of topics" [value]="topic">
           {{topic.Name}}
         </mat-option>
-      </mat-select><br><br>
+      </mat-select><br>
       </mat-form-field><br>
-      <!--<div class="button-row" *ngIf="hasSelectedTechnology">
-        <button mat-raised-button color="warn" >Add Topic</button>
-  </div>
-    
-<form class="example-form" *ngIf="hasClickedAddTopics">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Topic Name" >
-  </mat-form-field><br><br>-->
 
-
-
+      <div class="button-row" *ngIf="hasSelectedTechnology">
+          <button mat-raised-button color="primary" *ngIf="!hasSubmitButtonClicked" routerLink="addtopic" routerLinkActive="active">Add Topic</button>
+      </div><br><br>
+  
     <div class="button-row">
-        
         <button *ngIf="hasSelectedTopic" mat-raised-button color="primary" (click)="postQuestionsForm()">Submit</button>
     </div>
   </form><br>
 
-  <app-questions *ngIf="buttonClicked"></app-questions>
+  <app-questions *ngIf="hasSubmitButtonClicked"></app-questions>
   
 
   <div class="button-row">
-      <button mat-raised-button color="primary" *ngIf="!buttonClicked" routerLink="addtechnology" routerLinkActive="active">Add Technology</button>
+      <button mat-raised-button color="primary" *ngIf="!hasSubmitButtonClicked" routerLink="addtechnology" routerLinkActive="active">Add Technology</button>
   </div><br><br>
   

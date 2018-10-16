@@ -19,7 +19,7 @@ export class TechnologyComponent implements OnInit {
   topics: Topics[];
   hasSelectedTechnology:boolean=false;
   hasSelectedTopic:boolean=false;
-  buttonClicked:boolean=false;
+  hasSubmitButtonClicked:boolean=false;
   
 
   constructor(private svc: SMEService, private fb: FormBuilder) {
@@ -46,7 +46,7 @@ export class TechnologyComponent implements OnInit {
   }
   
   postQuestionsForm(){
-    this.buttonClicked=true;
+    this.hasSubmitButtonClicked=true;
   }
 
  
