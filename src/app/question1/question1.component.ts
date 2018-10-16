@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormArray, FormBuilder,FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-question1',
@@ -7,11 +7,8 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./question1.component.css']
 })
 export class Question1Component implements OnInit {
-  @Input() id: number;
+  @Input() id : number;
   @Output() noError = new EventEmitter();
- // @Output() noError:EventEmitter<any>=new EventEmitter<any>();
-  //eventTwo: EventEmitter<any> = new EventEmitter<any>();
-  //panelOpenState = false;
   question = new FormControl('', [Validators.required]);
   options: FormControl[] = [
     new FormControl('',[Validators.required]),
@@ -21,13 +18,42 @@ export class Question1Component implements OnInit {
   ];
   resourcelink = new FormControl('', [Validators.required]);
   bloomlevel = new FormControl('', [Validators.required]);
-  isValidArray:boolean[] = new Array(7).fill(false);
-
-  constructor() {
+  isValidArray : boolean[] = new Array(7).fill(false);
+  form: FormGroup;
+  items = [
+    {key: 'item1'},
+    {key: 'item2'},
+    {key: 'item3'},
+    {key: 'item4'},
+  ];
+  constructor(private fb: FormBuilder) {
   }
 
   ngOnInit() {
-    // this.noError.emit(true);
+    // create checkbox group
+    let checkboxGroup = new FormArray(this.items.map(item => new FormGroup({
+      id: new FormControl(item.key),
+     // text: new FormControl(item.text),
+      checkbox: new FormControl(false)
+    })));
+
+    // create a hidden reuired formControl to keep status of checkbox group
+    let hiddenControl = new FormControl(this.mapItems(checkboxGroup.value), Validators.required);
+    // update checkbox group's value to hidden formcontrol
+    checkboxGroup.valueChanges.subscribe((v) => {
+      hiddenControl.setValue(this.mapItems(v));
+    });
+
+    this.form = new FormGroup({
+      items: checkboxGroup,
+      selectedItems: hiddenControl
+    });
+  }
+
+  mapItems(items) {
+    let selectedItems = items.filter((item) => item.checkbox).map((item) => item.text);
+    //this.selectedITEMS = selectedItems;
+    return selectedItems.length ? selectedItems : null;
   }
 
   getErrorMessage() {
