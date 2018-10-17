@@ -35,6 +35,7 @@ export class TechnologyComponent implements OnInit {
       console.log(this.technologies);
       
     });
+    
 
   }
   getTopics() {

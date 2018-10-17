@@ -7,15 +7,14 @@ import { AddtopicComponent } from './addtopic/addtopic.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path:'questions',component:QuestionsComponent},
-  {path:'addtechnology',component:AddtechnologyComponent},
-  {path:'addtopic',component:AddtopicComponent}
+  {path: 'questions', component: QuestionsComponent},
+  {path: 'addtechnology', component: AddtechnologyComponent},
+  {path: 'addtopic',component: AddtopicComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
-  
+export class AppRoutingModule {
 }

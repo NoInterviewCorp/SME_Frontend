@@ -7,27 +7,24 @@ import { SMEService } from '../../services/sme.service';
   styleUrls: ['./addtechnology.component.css']
 })
 export class AddtechnologyComponent implements OnInit {
-  hasPressedEnter:boolean;
-  topics:Array<number>=[1];
+  hasPressedEnter: boolean;
+  topics: Array<number> = [1];
   lastNumber = this.topics.length;
-  hasClickedAdd:boolean;
- 
+  hasClickedAdd: boolean;
   constructor(private svc: SMEService) { }
 
   ngOnInit() {
   }
-
-enter(){
-  this.hasPressedEnter=true;
+enter() {
+  this.hasPressedEnter = true;
 }
-
-addTopic(){
-  this.hasClickedAdd=true;
+addTopic() {
+  this.hasClickedAdd = true;
   this.topics.push(++this.lastNumber);
-  
 }
-
-postTechnology(){
+postTechnology() {
   this.svc.postNewTechnology();
 }
 }
+
+

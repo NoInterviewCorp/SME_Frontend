@@ -9,12 +9,9 @@ import { SMEService } from '../../services/sme.service';
 export class AddtopicComponent implements OnInit {
 
   constructor(private svc: SMEService) { }
-
   ngOnInit() {
   }
-
-  postTopic(){
+  postTopic() {
     this.svc.postNewTopic();
   }
-
 }
