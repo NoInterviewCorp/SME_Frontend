@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SMEService } from '../../services/sme.service';
 
 @Component({
   selector: 'app-addtopic',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddtopicComponent implements OnInit {
 
-  constructor() { }
+  constructor(private svc: SMEService) { }
 
   ngOnInit() {
+  }
+
+  postTopic(){
+    this.svc.postNewTopic();
   }
 
 }

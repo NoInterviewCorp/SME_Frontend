@@ -17,4 +17,12 @@ export class SMEService {
     console.log('posted questions');
   }
 
+  postNewTechnology(){
+
+  }
+
+  postNewTopic(){
+    
+  }
+
 }

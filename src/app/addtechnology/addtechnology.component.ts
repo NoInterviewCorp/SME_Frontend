@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SMEService } from '../../services/sme.service';
 
 @Component({
   selector: 'app-addtechnology',
@@ -11,7 +12,7 @@ export class AddtechnologyComponent implements OnInit {
   lastNumber = this.topics.length;
   hasClickedAdd:boolean;
  
-  constructor() { }
+  constructor(private svc: SMEService) { }
 
   ngOnInit() {
   }
@@ -23,5 +24,10 @@ enter(){
 addTopic(){
   this.hasClickedAdd=true;
   this.topics.push(++this.lastNumber);
+  
+}
+
+postTechnology(){
+  this.svc.postNewTechnology();
 }
 }
