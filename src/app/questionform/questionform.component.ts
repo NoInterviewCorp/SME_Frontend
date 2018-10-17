@@ -3,10 +3,10 @@ import { FormGroup, FormArray, FormBuilder,FormControl, Validators } from '@angu
 
 @Component({
   selector: 'app-question1',
-  templateUrl: './question1.component.html',
-  styleUrls: ['./question1.component.css']
+  templateUrl: './questionform.component.html',
+  styleUrls: ['./questionform.component.css']
 })
-export class Question1Component implements OnInit {
+export class QuestionformComponent implements OnInit {
   @Input() id : number;
   @Output() noError = new EventEmitter();
   question = new FormControl('', [Validators.required]);
