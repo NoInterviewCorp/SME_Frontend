@@ -9,4 +9,5 @@ export class Questions{
     ResourceLink: string;
     BloomLevel: BloomTaxonomy;
     TopicId: number;
+    HasPublished: boolean;
 }

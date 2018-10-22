@@ -4,12 +4,15 @@ import {HomeComponent} from './home/home.component';
 import {QuestionsComponent} from './questions/questions.component';
 import { AddtechnologyComponent } from './addtechnology/addtechnology.component';
 import { AddtopicComponent } from './addtopic/addtopic.component';
+import { QuestionlibraryComponent } from './questionlibrary/questionlibrary.component';
+import { QuestionformComponent } from './questionform/questionform.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'questions', component: QuestionsComponent},
   {path: 'addtechnology', component: AddtechnologyComponent},
-  {path: 'addtopic',component: AddtopicComponent}
+  {path: 'addtopic',component: AddtopicComponent},
+  {path: 'questionlibrary',component: QuestionlibraryComponent},
 ];
 
 @NgModule({

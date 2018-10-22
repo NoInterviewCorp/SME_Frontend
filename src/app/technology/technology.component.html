@@ -1,11 +1,11 @@
-<form>
+<form class="form">
     <mat-form-field>
       <mat-select placeholder="Technology" [(ngModel)]="selectedValue" (selectionChange) = "getTopics()"  name="technology">
         <mat-option *ngFor="let technology of technologies" [value]="technology">
           {{technology.Name}}
         </mat-option>
       </mat-select>
-    </mat-form-field><br><br>
+    </mat-form-field>
 
     <mat-form-field *ngIf="hasSelectedTechnology">
     <mat-select placeholder="Topics"  [(ngModel)]="selectedTopic"  (selectionChange) = "getSubmit()" name="topic">
@@ -14,20 +14,26 @@
         </mat-option>
       </mat-select><br>
       </mat-form-field><br>
-
       <div class="button-row" *ngIf="hasSelectedTechnology">
-          <button mat-raised-button color="primary" *ngIf="!hasSubmitButtonClicked" routerLink="addtopic" routerLinkActive="active">Add Topic</button>
-      </div><br><br>
-  
+          <button class="addtopic" mat-raised-button color="primary" *ngIf="!hasSelectedTopic" routerLink="addtopic" routerLinkActive="active">Add Topic</button>
+      </div>
+      <div class="buttons">
     <div class="button-row">
-        <button *ngIf="hasSelectedTopic" mat-raised-button color="primary" (click)="postQuestionsForm()">Submit</button>
+        <button *ngIf="hasSelectedTopic" mat-raised-button color="primary" routerLink="questions" routerLinkActive="active" >Add</button><br><br>
     </div>
-  </form><br>
+    <div class="button-row">
+      <button *ngIf="hasSelectedTopic" mat-raised-button color="primary" routerLink="questionlibrary" routerLinkActive="active" >Browse</button>
+  </div>
+  <div class="button-row">
+        <button *ngIf="hasSelectedTopic" mat-raised-button color="primary">Save</button><br><br>
+    </div>
+</div>
+  <div class="button-row">
+    <button mat-raised-button class="addtechnology" color="primary" *ngIf="!hasSelectedTechnology" routerLink="addtechnology" routerLinkActive="active">Add Technology</button>
+</div>
+  </form>
 
-  <app-questions *ngIf="hasSubmitButtonClicked"></app-questions>
+  
   
 
-  <div class="button-row">
-      <button mat-raised-button color="primary" *ngIf="!hasSubmitButtonClicked" routerLink="addtechnology" routerLinkActive="active">Add Technology</button>
-  </div><br><br>
   

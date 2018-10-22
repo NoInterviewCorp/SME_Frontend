@@ -1,4 +1,4 @@
-<mat-expansion-panel>
+<mat-expansion-panel >
   <mat-expansion-panel-header>
     <mat-panel-title>
       Question {{id}}
@@ -7,8 +7,9 @@
 
     </mat-panel-description>
   </mat-expansion-panel-header>
-
-  <div class="example-container">
+<div class="flex-container">
+  <div style="flex-grow: 5">
+  <div class="example-container" >
     <mat-form-field>
       <textarea matInput placeholder="Question goes here!" [formControl]="question" required></textarea>
       <mat-error *ngIf="question.invalid">{{getErrorMessage()}}</mat-error>
@@ -17,15 +18,7 @@
     </mat-form-field>
   </div><br><br>
   <p><b>NOTE:</b>You have to check the correct option</p>
- <!-- <div class="options" *ngFor="let option of options; index as id;">
-    <mat-checkbox></mat-checkbox>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="option" [formControl]="option" required>
-      <mat-error *ngIf="option.invalid">{{getErrorMessage1(id)}}</mat-error>
-      <mat-error *ngIf="option.valid">{{getValidMessage(id + 1)}}</mat-error>
-    </mat-form-field><br><br>  
-  </div>-->
-  <!-- <div class="options" *ngFor="let option of options; index as id;"> -->
+ 
   <form [formGroup]="form">
     <div [formArrayName]="'items'" [class.invalid]="!form.controls.selectedItems.valid">
       <div *ngFor="let control of form.controls.items.controls; let i = index;" [formGroup]="control">
@@ -41,7 +34,8 @@
       checkbox group is required!
     </div>
    </form>
-  <!-- </div> -->
+  </div>
+  <div style="flex-grow: 5">
 
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Give a Resource Link" [formControl]="resourcelink" required>
@@ -60,6 +54,10 @@
       <mat-option value="5">Synthesis</mat-option>
       <mat-option value="6">Evaluation</mat-option>
     </mat-select>
-  </mat-form-field>
-
+  </mat-form-field><br><br>
+ <div class="button-row">
+      <button mat-flat-button color="primary">Save</button><br><br>
+  </div>
+  </div>
+</div>
 </mat-expansion-panel>

@@ -18,6 +18,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AddtechnologyComponent } from './addtechnology/addtechnology.component';
 import { AddtopicComponent } from './addtopic/addtopic.component';
+import { PublishedquestionsComponent } from './publishedquestions/publishedquestions.component';
+import { SavedquestionsComponent } from './savedquestions/savedquestions.component';
+import { QuestionlibraryComponent } from './questionlibrary/questionlibrary.component';
+
 
 
 @NgModule({
@@ -29,7 +33,10 @@ import { AddtopicComponent } from './addtopic/addtopic.component';
     QuestionsComponent,
     QuestionformComponent,
     AddtechnologyComponent,
-    AddtopicComponent
+    AddtopicComponent,
+    PublishedquestionsComponent,
+    SavedquestionsComponent,
+    QuestionlibraryComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,8 @@ import { AddtopicComponent } from './addtopic/addtopic.component';
     MatToolbarModule,
     MatButtonModule,
     MatExpansionModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

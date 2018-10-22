@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder,FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-question1',
+  selector: 'app-questionform',
   templateUrl: './questionform.component.html',
   styleUrls: ['./questionform.component.css']
 })

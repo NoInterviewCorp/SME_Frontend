@@ -1,0 +1,18 @@
+.buttons{
+    display: inline-flex;
+    flex-direction: row;
+}
+button{
+    margin-right: 10px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+mat-form-field{
+    width:50%;
+}
