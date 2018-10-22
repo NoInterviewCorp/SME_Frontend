@@ -2,6 +2,9 @@
     display: inline-flex;
     flex-direction: row;
 }
+.options{
+    width: 50%;
+}
 .flex-container{
     display: flex;
     flex-direction: row;
@@ -10,5 +13,7 @@
 }
 
 mat-form-field{
-    width: 80%;
+    width: 90%;
 }
+
+

@@ -21,6 +21,8 @@ import { AddtopicComponent } from './addtopic/addtopic.component';
 import { PublishedquestionsComponent } from './publishedquestions/publishedquestions.component';
 import { SavedquestionsComponent } from './savedquestions/savedquestions.component';
 import { QuestionlibraryComponent } from './questionlibrary/questionlibrary.component';
+import { ProfilepageComponent } from './profilepage/profilepage.component';
+
 
 
 
@@ -36,7 +38,8 @@ import { QuestionlibraryComponent } from './questionlibrary/questionlibrary.comp
     AddtopicComponent,
     PublishedquestionsComponent,
     SavedquestionsComponent,
-    QuestionlibraryComponent
+    QuestionlibraryComponent,
+    ProfilepageComponent
   ],
   imports: [
     BrowserModule,

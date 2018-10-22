@@ -1,10 +1,10 @@
 .buttons{
     display: inline-flex;
-    flex-direction: row;
 }
 button{
     margin-right: 10px;
 }
+
 .form{
     display: flex;
     flex-direction: column;
@@ -16,3 +16,10 @@ button{
 mat-form-field{
     width:50%;
 }
+
+
+
+
+
+
+

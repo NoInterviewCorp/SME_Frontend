@@ -8,7 +8,7 @@
     </mat-panel-description>
   </mat-expansion-panel-header>
 <div class="flex-container">
-  <div style="flex-grow: 5">
+  <div style="flex-grow: 7">
   <div class="example-container" >
     <mat-form-field>
       <textarea matInput placeholder="Question goes here!" [formControl]="question" required></textarea>
@@ -19,10 +19,10 @@
   </div><br><br>
   <p><b>NOTE:</b>You have to check the correct option</p>
  
-  <form [formGroup]="form">
-    <div [formArrayName]="'items'" [class.invalid]="!form.controls.selectedItems.valid">
-      <div *ngFor="let control of form.controls.items.controls; let i = index;" [formGroup]="control">
-        <div class="inputs">
+  <form  [formGroup]="form">
+    <div  [formArrayName]="'items'" [class.invalid]="!form.controls.selectedItems.valid">
+      <div  class="options" *ngFor="let control of form.controls.items.controls; let i = index;" [formGroup]="control" >
+        <div class="inputs" >
           <input type="checkbox" formControlName="checkbox" id="{{ control.controls.id.value }}">
           <input matInput placeholder="options" [formControl]="options[i]"  required>
         </div>
@@ -35,7 +35,7 @@
     </div>
    </form>
   </div>
-  <div style="flex-grow: 5">
+  <div style="flex-grow: 3">
 
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Give a Resource Link" [formControl]="resourcelink" required>
@@ -56,7 +56,7 @@
     </mat-select>
   </mat-form-field><br><br>
  <div class="button-row">
-      <button mat-flat-button color="primary">Save</button><br><br>
+      <button mat-flat-button color="accent">Save</button><br><br>
   </div>
   </div>
 </div>

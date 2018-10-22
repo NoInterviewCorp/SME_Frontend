@@ -1,25 +1,25 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
+<mat-toolbar color="primary" >
+    <mat-toolbar-row class="head">
         <span>Add Technology</span>
     </mat-toolbar-row>
 </mat-toolbar><br><br>
 
 <form class="example-form">
     <mat-form-field class="example-full-width" (keyup.enter)="enter()">
-      <input matInput placeholder="Technology Name">
+        <input matInput placeholder="Technology Name">
     </mat-form-field><br><br>
-    <div *ngIf="hasPressedEnter" >
-    <mat-form-field class="example-full-width" *ngFor="let index of topics;let id=index">
-        <input  matInput placeholder="Topic {{topics[id]}}">
-      </mat-form-field>
+    <div class="container" *ngIf="hasPressedEnter">
+        <mat-form-field class="topic" *ngFor="let index of topics;let id=index">
+            <input matInput placeholder="Topic {{topics[id]}}">
+        </mat-form-field>
+    </div><br><br>
+    <div class="buttons">
+    <div class="button-row">
+        <button mat-flat-button color="accent" id="add" *ngIf="hasPressedEnter" (click)="addTopic()">Add a topic</button><br><br>
     </div>
     <div class="button-row">
-        <button mat-flat-button color="primary" id="add" *ngIf="hasPressedEnter" (click)="addTopic()">Add a topic</button><br><br>
+        <button mat-flat-button color="accent" id="post" *ngIf="hasPressedEnter" (click)="postTechnology()">Submit</button><br><br>
     </div>
-    <div class="button-row">
-        <button mat-flat-button color="primary" id="post" *ngIf="hasPressedEnter" (click)="postTechnology()">Submit</button><br><br>
     </div>
 
-</form>    
-
-
+</form>
