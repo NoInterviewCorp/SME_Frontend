@@ -9,8 +9,8 @@ import { QuestionformComponent } from './questionform/questionform.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path:'profilepage',component: ProfilepageComponent},
+  {path: '', component: ProfilepageComponent},
+  {path:'home',component: HomeComponent},
   {path: 'questions', component: QuestionsComponent},
   {path: 'addtechnology', component: AddtechnologyComponent},
   {path: 'addtopic',component: AddtopicComponent},

@@ -1,15 +1,30 @@
-.example-card {
-    max-width: 400px;
-  }
-  
+
   .example-header-image {
     background-image: url('C:\Users\Administrator\Desktop\frontend\potentiometer\src\assets\images\logo.png');
     background-size: cover;
   }
 
+  img{
+       height: 60px; 
+       width: 60px;
+       margin: auto
+     
+  }
+
   .flex-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    align-content: center;
+    padding-top: 20px;
+  }
+button{
+    width: 100%;
+    background-color: rgb(69, 69, 87)
+}
+
+@media (min-width:426px){
+    .flex-container{
+        flex-direction: row;
+        justify-content: space-around;
+      } 
 }
