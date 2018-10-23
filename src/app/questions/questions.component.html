@@ -1,8 +1,13 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <span>Post Your Questions</span>
-    </mat-toolbar-row>
-</mat-toolbar>
+<mat-toolbar color="primary" >
+        <mat-toolbar-row class="head">
+            <div style="flex-grow: 0.15">
+                <img src="assets/images/logo.png" style="background-color: aliceblue;height:70px;width:70px">
+            </div>
+            <div style="flex-grow: 9.85">
+                <span>Post Your Questions</span>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar><br>
 <mat-accordion>
     <app-questionform *ngFor="let index of questions; " [id]="index" (noError)="handleEventEmitter($event)"></app-questionform><br><br>
 </mat-accordion>

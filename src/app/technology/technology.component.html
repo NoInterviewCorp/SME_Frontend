@@ -15,21 +15,19 @@
       </mat-select><br>
       </mat-form-field><br>
       <div class="button-row" *ngIf="hasSelectedTechnology">
-          <button class="addtopic" mat-raised-button color="accent" *ngIf="!hasSelectedTopic" routerLink="addtopic" routerLinkActive="active">Add Topic</button>
+          <button class="addtopic" mat-raised-button  *ngIf="!hasSelectedTopic" routerLink="addtopic" routerLinkActive="active">Add Topic</button>
       </div>
       <div class="buttons">
     <div class="button-row">
-        <button *ngIf="hasSelectedTopic" mat-raised-button color="accent" routerLink="questions" routerLinkActive="active" >Add</button><br><br>
+        <button *ngIf="hasSelectedTopic" mat-raised-button  routerLink="questions" routerLinkActive="active" >Add</button><br><br>
     </div>
-    <div class="button-row">
-      <button *ngIf="hasSelectedTopic" mat-raised-button color="primary" routerLink="questionlibrary" routerLinkActive="active" >Browse</button>
-  </div>
+    
   <div class="button-row">
-        <button *ngIf="hasSelectedTopic" mat-raised-button color="accent">Save</button><br><br>
+        <button *ngIf="hasSelectedTopic" mat-raised-button >Save</button><br><br>
     </div>
 </div>
   <div class="button-row">
-    <button mat-raised-button class="addtechnology" color="accent" *ngIf="!hasSelectedTechnology" routerLink="addtechnology" routerLinkActive="active">Add Technology</button>
+    <button mat-raised-button class="addtechnology"  *ngIf="!hasSelectedTechnology" routerLink="addtechnology" routerLinkActive="active">Add Technology</button>
 </div>
   </form>
 
