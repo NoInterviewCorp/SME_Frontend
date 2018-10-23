@@ -6,9 +6,11 @@ import { AddtechnologyComponent } from './addtechnology/addtechnology.component'
 import { AddtopicComponent } from './addtopic/addtopic.component';
 import { QuestionlibraryComponent } from './questionlibrary/questionlibrary.component';
 import { QuestionformComponent } from './questionform/questionform.component';
+import { ProfilepageComponent } from './profilepage/profilepage.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path:'profilepage',component: ProfilepageComponent},
   {path: 'questions', component: QuestionsComponent},
   {path: 'addtechnology', component: AddtechnologyComponent},
   {path: 'addtopic',component: AddtopicComponent},

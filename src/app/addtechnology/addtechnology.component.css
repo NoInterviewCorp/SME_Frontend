@@ -1,10 +1,8 @@
 .head{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    align-content: space-around;
 }
 
 .example-form{
@@ -17,7 +15,7 @@
 }
 
 mat-form-field{
-    width: 40%;   
+    width: 60%;   
 }
 
 .topic{

@@ -1,8 +1,6 @@
 .head{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    align-content: space-around;
 }

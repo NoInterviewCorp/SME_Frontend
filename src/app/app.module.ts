@@ -22,8 +22,10 @@ import { PublishedquestionsComponent } from './publishedquestions/publishedquest
 import { SavedquestionsComponent } from './savedquestions/savedquestions.component';
 import { QuestionlibraryComponent } from './questionlibrary/questionlibrary.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
-
-
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material';
+import { ProfilecardsComponent } from './profilecards/profilecards.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { ProfilepageComponent } from './profilepage/profilepage.component';
     PublishedquestionsComponent,
     SavedquestionsComponent,
     QuestionlibraryComponent,
-    ProfilepageComponent
+    ProfilepageComponent,
+    ProfilecardsComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,10 @@ import { ProfilepageComponent } from './profilepage/profilepage.component';
     MatButtonModule,
     MatExpansionModule,
     MatCheckboxModule,
-   
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
