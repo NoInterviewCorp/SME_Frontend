@@ -1,13 +1,13 @@
 import { Questions } from "./question.model";
 
 export class Topics{
-    TopicId:number;
-    Name:string;
-    Questions:Questions[];
-    TechnologyId:number;
+    topicId:number;
+    name:string;
+    questions:Questions[];
+    technologyId:number;
 
     constructor(_name:string){
-        this.Questions = [];
-        this.Name = _name;
+        this.questions = [];
+        this.name = _name;
     }
 }

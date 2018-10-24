@@ -39,7 +39,8 @@ export class TechnologyComponent implements OnInit {
   }
   getTopics() {
     this.hasSelectedTechnology=true;
-    this.topics=this.selectedValue.Topics;
+    console.log(this.selectedValue.name+" someras");
+    this.topics=this.selectedValue.topics;
   }
   getSubmit(){
     this.hasSelectedTopic=true;

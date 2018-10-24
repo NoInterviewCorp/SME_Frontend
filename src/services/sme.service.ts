@@ -11,8 +11,7 @@ export class SMEService {
   url = "http://localhost:5000/";
   constructor(private http: HttpClient) { }
   showTechnologies() {
-    console.log('called technology');
-    return this.http.get(this.url + "SME");
+    return this.http.get(this.url + "all");
   }
 
   submitQuestions() {

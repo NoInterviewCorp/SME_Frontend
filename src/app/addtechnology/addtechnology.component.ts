@@ -30,8 +30,8 @@ export class AddtechnologyComponent implements OnInit {
   }
   postTechnology() {
     let technology = new Technology();
-    technology.Name = this.technologyName;
-    technology.Topics = this.topics;
+    technology.name = this.technologyName;
+    technology.topics = this.topics;
     // console.log(technology);
     this.svc.postNewTechnology(technology).subscribe((response) => {
       console.log(response);

@@ -1,8 +1,8 @@
 <form class="form">
     <mat-form-field>
-      <mat-select  placeholder="Technology" [(ngModel)]="selectedValue" (selectionChange) = "getTopics()"  name="technology">
+      <mat-select  placeholder="Technology" [(ngModel)]="selectedValue" (selectionChange) = "getTopics()" [ngModelOptions]="{standalone: true}" >
         <mat-option *ngFor="let technology of technologies" [value]="technology">
-          {{technology.Name}}
+          {{technology?.name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -10,7 +10,7 @@
     <mat-form-field *ngIf="hasSelectedTechnology">
     <mat-select placeholder="Topics"  [(ngModel)]="selectedTopic"  (selectionChange) = "getSubmit()" name="topic">
         <mat-option *ngFor="let topic of topics" [value]="topic">
-          {{topic.Name}}
+          {{topic?.name}}
         </mat-option>
       </mat-select><br>
       </mat-form-field><br>
