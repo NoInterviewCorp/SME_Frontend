@@ -5,4 +5,9 @@ export class Topics{
     Name:string;
     Questions:Questions[];
     TechnologyId:number;
+
+    constructor(_name:string){
+        this.Questions = [];
+        this.Name = _name;
+    }
 }

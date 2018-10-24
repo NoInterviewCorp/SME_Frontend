@@ -35,10 +35,7 @@ export class TechnologyComponent implements OnInit {
     this.svc.showTechnologies().subscribe((res: any) => {
       this.technologies = res;
       console.log(this.technologies);
-      
     });
-    
-
   }
   getTopics() {
     this.hasSelectedTechnology=true;

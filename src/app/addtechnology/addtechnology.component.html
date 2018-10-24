@@ -1,11 +1,11 @@
 
 <form class="example-form">
-    <mat-form-field class="example-full-width" (keyup.enter)="enter()">
-        <input matInput placeholder="Technology Name">
+    <mat-form-field class="example-full-width"  (keyup.enter)="enter()" >
+        <input matInput placeholder="Technology Name" [(ngModel)]="technologyName" [ngModelOptions]="{standalone: true}">
     </mat-form-field><br><br>
     <div class="container" *ngIf="hasPressedEnter">
         <mat-form-field class="topic" *ngFor="let index of topics;let id=index">
-            <input matInput placeholder="Topic {{topics[id]}}">
+            <input matInput [(ngModel)]="topics[id].Name" placeholder="Topic Name" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
     </div><br><br>
     <div class="buttons">
