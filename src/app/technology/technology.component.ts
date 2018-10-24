@@ -4,6 +4,7 @@ import { SMEService } from '../../services/sme.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Topics } from '../topic.model';
+import {CommunicatorService} from '../../services/communicator.service';
 
 
 
@@ -22,11 +23,12 @@ export class TechnologyComponent implements OnInit {
   hasSubmitButtonClicked:boolean=false;
   
 
-  constructor(private svc: SMEService, private fb: FormBuilder) {
+  constructor(private svc: SMEService, private fb: FormBuilder,private com: CommunicatorService) {
     this.getTechnologies();
    }
 
   ngOnInit() {
+    this.com.setTitle('Technology');
   }
 
   getTechnologies() {

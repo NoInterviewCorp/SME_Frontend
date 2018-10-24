@@ -3,6 +3,8 @@ import { FormControl, Validators } from '@angular/forms';
 import { SMEService } from '../../services/sme.service';
 import { Questions } from '../question.model';
 import { ErrorStatus } from './errorstatus.model';
+import {CommunicatorService} from '../../services/communicator.service'
+
 
 @Component({
   selector: 'app-questions',
@@ -20,9 +22,10 @@ export class QuestionsComponent implements OnInit {
 
 
 
-  constructor(private svc: SMEService) { }
+  constructor(private svc: SMEService,private com:CommunicatorService) { }
 
   ngOnInit() {
+    this.com.setTitle('Add Questions');
   }
 
   onClick() {
