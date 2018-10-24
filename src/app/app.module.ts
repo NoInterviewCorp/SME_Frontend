@@ -20,12 +20,12 @@ import { AddtechnologyComponent } from './addtechnology/addtechnology.component'
 import { AddtopicComponent } from './addtopic/addtopic.component';
 import { PublishedquestionsComponent } from './publishedquestions/publishedquestions.component';
 import { SavedquestionsComponent } from './savedquestions/savedquestions.component';
-import { QuestionlibraryComponent } from './questionlibrary/questionlibrary.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material';
 import { ProfilecardsComponent } from './profilecards/profilecards.component';
 import {MatCardModule} from '@angular/material/card';
+import { ProfileinfoComponent } from './profileinfo/profileinfo.component';
 
 
 @NgModule({
@@ -40,9 +40,9 @@ import {MatCardModule} from '@angular/material/card';
     AddtopicComponent,
     PublishedquestionsComponent,
     SavedquestionsComponent,
-    QuestionlibraryComponent,
     ProfilepageComponent,
     ProfilecardsComponent,
+    ProfileinfoComponent,
   ],
   imports: [
     BrowserModule,

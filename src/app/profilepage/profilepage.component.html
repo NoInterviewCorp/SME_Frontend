@@ -1,24 +1,21 @@
 <div class="body">
-<mat-toolbar color="primary"> 
-    <mat-toolbar-row class="head">  
-        <div style="flex-grow: 0.15">
-      <img src="assets/images/logo.png" style="background-color: aliceblue;height:70px;width:70px">
-      </div>
-      <div style="flex-grow: 9.7">
-      <span>Welcome</span>
-      </div>
-      <div style="flex-grow: 0.15">
-          <button mat-button [matMenuTriggerFor]="menu" style="font-size: 30px;"><b>...</b></button>
-          <mat-menu #menu="matMenu">
-            <img src="assets/images/profile.png" style="background-color: aliceblue;height:80px;width:110px">
-            <button mat-menu-item>Sign Out</button>
-          </mat-menu>
-      </div>
-    </mat-toolbar-row>
-</mat-toolbar>
-<app-profilecards></app-profilecards>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row class="head">
+            <div style="flex-grow: 0.15">
+                <img src="assets/images/logo.png" style="background-color: aliceblue;height:70px;width:70px">
+            </div>
+            <div style="flex-grow: 9.7">
+                <span>Welcome</span>
+            </div>
+            <div style="flex-grow: 0.15">
+                <button mat-button [matMenuTriggerFor]="menu" style="font-size: 30px;"><b>...</b></button>
+                <mat-menu #menu="matMenu">
+                    <img src="assets/images/profile.png" style="background-color: aliceblue;height:80px;width:110px">
+                    <button mat-menu-item>Sign Out</button>
+                </mat-menu>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <app-profileinfo></app-profileinfo>
+    <app-profilecards></app-profilecards>
 </div>
-
-
-
-  

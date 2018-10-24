@@ -1,6 +1,6 @@
 
   .example-header-image {
-    background-image: url('C:\Users\Administrator\Desktop\frontend\potentiometer\src\assets\images\logo.png');
+    background-image: url('../../assets/images/logo.png');
     background-size: cover;
   }
 
