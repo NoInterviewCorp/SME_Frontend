@@ -1,8 +1,7 @@
-import { Options } from "selenium-webdriver/chrome";
-
 import { BloomTaxonomy } from "./bloomTaxonomy.model";
+import { Options } from "./option.model";
 
-export class Questions{
+export class Questions {
     questionId: number
     problemStatement: string;
     options: Options[];

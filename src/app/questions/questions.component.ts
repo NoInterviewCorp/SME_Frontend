@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { SMEService } from '../../services/sme.service';
 import { Questions } from '../question.model';
 import { ErrorStatus } from './errorstatus.model';
-import {CommunicatorService} from '../../services/communicator.service'
+import { CommunicatorService } from '../../services/communicator.service'
 
 
 @Component({
@@ -13,16 +13,18 @@ import {CommunicatorService} from '../../services/communicator.service'
 })
 export class QuestionsComponent implements OnInit {
 
-  questions: Array<number> = [1, 2, 3, 4, 5];
-  lastNumber = this.questions.length - 1;
-  noerror: Array<boolean> = [false, false];
+  questions: Array<number> = [1];
+  questionObjs: Questions[] = [new Questions()];
+  lastNumber = this.questions.length;
+  noerror: Array<boolean> = [false];
   haserror: boolean = false;
   hasnoerror: boolean = false;
   hasClickedAdd: boolean = false;
+  hasAdded5Qs: boolean = false;
 
 
 
-  constructor(private svc: SMEService,private com:CommunicatorService) { }
+  constructor(private svc: SMEService, private com: CommunicatorService) { }
 
   ngOnInit() {
     this.com.setTitle('Add Questions');
@@ -30,12 +32,30 @@ export class QuestionsComponent implements OnInit {
 
   onClick() {
     let result: boolean;
-    // this.noerror.forEach(elem=>console.log(elem));
-    for (let i = 0; i < this.noerror.length - 1; i++) {
-      result = (this.noerror[i]) && (this.noerror[i + 1]);
+    console.log("error is " + this.noerror);
+    // TURN THIS ON FOR TESTING ONE OR LESS THAN 5 QUESTION SUBMIT
+    // ******** TESTING PART STARTS HERE *********
+    // if (this.noerror.length > 1) {
+    //   for (let i = 0; i < this.noerror.length - 1; i++) {
+    //     result = (this.noerror[i]) && (this.noerror[i + 1]);
+    //   }
+    // } else {
+    //   result = this.noerror[0];
+    // }
+    // // *********** END *****************
+    // // Development Part FOR AT LEAST 5 QS
+    // // ******DEVELOPMENT BUILD PART STARTS HERE*****
+    if (!this.hasAdded5Qs) {
+      return;
     }
+    else {
+      for (let i = 0; i < this.noerror.length - 1; i++) {
+        result = (this.noerror[i]) && (this.noerror[i + 1]);
+      }
+    }
+    // // *********** END *****************
 
-    console.log(result);
+    console.log("result is " + result);
     if (result) {
       this.haserror = false;
       this.hasnoerror = true;
@@ -53,10 +73,12 @@ export class QuestionsComponent implements OnInit {
     // console.log(hasNoError);
     let index = errorstatus.MemberId - 1;
     this.noerror[index] = errorstatus.HasError;
+    this.questionObjs[index] = errorstatus.QuestionObj;
   }
 
   postQuestions() {
-    this.svc.submitQuestions();
+    console.log(this.questionObjs);
+    // this.svc.submitQuestions();
   }
 
   addQuestion() {
@@ -64,5 +86,9 @@ export class QuestionsComponent implements OnInit {
     this.hasClickedAdd = true;
     this.questions.push(++this.lastNumber);
     this.noerror.push(false);
+    this.questionObjs.push(new Questions);
+    if(this.questions.length >= 5){
+      this.hasAdded5Qs = true;
+    }
   }
 }
